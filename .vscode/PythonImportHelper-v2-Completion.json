@@ -115,7 +115,7 @@
         "kind": 6,
         "importPath": "src.stempeluhr.app",
         "description": "src.stempeluhr.app",
-        "peekOfCode": "class StempelUhr(toga.App):\n    def startup(self):\n        self.main_box = toga.Box(style=Pack(direction=COLUMN, padding=10))\n        self.username_input = toga.TextInput(placeholder=\"Username\", style=Pack(flex=1, padding=(0, 5)))\n        self.password_input = toga.PasswordInput(placeholder=\"Password\", style=Pack(flex=1, padding=(0, 5)))\n        self.login_button = toga.Button(\"Login\", on_press=self.handle_login, style=Pack(padding=5))\n        login_box = toga.Box(style=Pack(direction=ROW, padding=10))\n        login_box.add(self.username_input)\n        login_box.add(self.password_input)\n        login_box.add(self.login_button)",
+        "peekOfCode": "class StempelUhr(toga.App):\n    def startup(self):\n        self.current_user = None\n        self.start_time = None\n        self.total_time = timedelta()\n        self.work_hours = self.load_work_hours()\n        self.timer_running = False\n        self.main_box = toga.Box(style=Pack(direction=COLUMN, padding=10))\n        self.username_input = toga.TextInput(placeholder=\"Username\", style=Pack(flex=1, padding=(0, 5)))\n        self.password_input = toga.PasswordInput(placeholder=\"Password\", style=Pack(flex=1, padding=(0, 5)))",
         "detail": "src.stempeluhr.app",
         "documentation": {}
     },

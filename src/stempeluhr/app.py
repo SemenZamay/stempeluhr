@@ -8,6 +8,14 @@ import threading
 
 class StempelUhr(toga.App):
     def startup(self):
+
+        self.current_user = None
+        self.start_time = None
+        self.total_time = timedelta()
+
+        self.work_hours = self.load_work_hours()
+        self.timer_running = False
+
         self.main_box = toga.Box(style=Pack(direction=COLUMN, padding=10))
 
         self.username_input = toga.TextInput(placeholder="Username", style=Pack(flex=1, padding=(0, 5)))
@@ -25,12 +33,7 @@ class StempelUhr(toga.App):
         self.main_window.content = self.main_box
         self.main_window.show()
 
-        self.current_user = None
-        self.start_time = None
-        self.total_time = timedelta()
 
-        self.work_hours = self.load_work_hours()
-        self.timer_running = False
 
     def handle_login(self, widget):
         username = self.username_input.value

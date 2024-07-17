@@ -19,7 +19,7 @@ sources = [
 test_sources = [
     "tests",
 ]
-
+#TODO: Add requirements pip freeze > requirements.txt and add them here
 requires = [
 ]
 test_requires = [
