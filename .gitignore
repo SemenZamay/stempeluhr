@@ -33,6 +33,8 @@ Temporary Items
 # Distribution / packaging
 .Python
 env/
+venv/
+.venv/
 build/
 develop-eggs/
 dist/
@@ -49,6 +51,7 @@ var/
 .installed.cfg
 *.egg
 .vs
+.vscode
 
 # IntelliJ Idea family of suites
 .idea
